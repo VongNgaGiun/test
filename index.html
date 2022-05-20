@@ -5,18 +5,117 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="assets/css/style.css" />
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+      body {
+        background-color: #3a5a4f;
+        color: white;
+      }
+      .header {
+        display: flex;
+        align-items: center;
+        margin: auto;
+        min-height: 100vh;
+        max-width: 1200px;
+        width: 80%;
+      }
+      .header__container {
+        flex: 1;
+      }
+      .header sub {
+        font-size: 1.25rem;
+      }
+      .header h1 {
+        font-size: 4rem;
+        font-weight: bold;
+      }
+      .header p {
+        letter-spacing: 3px;
+        font-size: 1.25rem;
+        line-height: 1.5;
+      }
+      .header a {
+        display: inline-block;
+        margin-top: 35px;
+        padding: 20px 40px;
+        border: 1px white solid;
+        color: white;
+        text-decoration: none;
+        letter-spacing: 3px;
+        font-size: 1.15rem;
+      }
+      .header a:hover {
+        background-color: tomato;
+      }
+      .header__cover {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-sizing: border-box;
+        margin-left: 2rem;
+        width: 600px;
+        height: 600px;
+        border: #e9eaf4 solid 6px;
+        border-radius: 50%;
+        background-color: white;
+        animation: scaleElement 1.5s alternate ease-in-out infinite;
+      }
+      .header__cover::before,
+      .header__cover::after {
+        position: absolute;
+        width: 110%;
+        height: 110%;
+        border: #e9eaf4 solid 6px;
+        border-top-color: transparent;
+        border-bottom-color: transparent;
+        border-radius: 50%;
+        content: '';
+        animation: rotateElement 1.5s ease-in-out infinite;
+      }
+      .header__cover::after {
+        width: 105%;
+        height: 105%;
+        animation-delay: 0.5s;
+        animation-direction: reverse;
+      }
+      .header__cover img {
+        width: 100%;
+      }
+
+      @keyframes scaleElement {
+        100% {
+          transform: scale(1.05);
+        }
+      }
+      @keyframes rotateElement {
+        100% {
+          transform: rotateZ(360deg);
+        }
+      }
+    </style>
   </head>
   <body>
-    <h1>hello</h1>
-    <img src="https://picsum.photos/200/300" alt="圖片" />
-    <img src="https://picsum.photos/200/300" alt="圖片" />
-    <iframe
-      src="https://my.spline.design/molang3dcopy-9a7315cc4b4284f4ce49291d41232c10/"
-      frameborder="0"
-      width="100%"
-      height="100%"
-    ></iframe>
-    <script src="assets/js/script.js"></script>
+    <header class="header">
+      <article class="header__container">
+        <sub>小標題文字</sub>
+        <h1>大標題文字</h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis
+          magnam labore recusandae. Nemo iure asperiores porro ex quas natus vel
+          ipsam voluptates fugiat error, magni sapiente itaque harum, in quia?
+        </p>
+        <a href="#">click me</a>
+      </article>
+      <aside class="header__cover">
+        <img
+          src="/assets/img/0b4be25be00dbe284c6fccc8e473dcf0.jpg"
+          alt="圖片展示"
+        />
+      </aside>
+    </header>
   </body>
 </html>
